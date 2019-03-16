@@ -12,13 +12,14 @@
   (def c (chan 3))
 
   ;; connect imap, get latest message
-  (>!! c (get-latest))
+  (go (onto-chan c (get-all)))
 
   ;; put into search index
   (def index (setup-lucene))
-  (clucy/add index (<!! c))
+  (go (while true (clucy/add index (<! c))))
 
   ;; get it out of the search index
+  (Thread/sleep 3000)
   (println ((first (clucy/search index "test" 10)) :subject))
   )
 

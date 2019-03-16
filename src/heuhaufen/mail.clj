@@ -14,3 +14,8 @@
   (read-message (first inbox-messages))
   )
 
+(defn get-all []
+  (def inbox-messages (connect-imap))
+  (map read-message inbox-messages)
+  )
+
