@@ -16,10 +16,13 @@
 
   ;; put into search index
   (def index (setup-lucene))
+  (clucy/add index {:subject "lucene buffer smurf"})
   (go (while true (clucy/add index (<! c))))
 
   ;; get it out of the search index
   (Thread/sleep 3000)
   (println ((first (clucy/search index "test" 10)) :subject))
+  (println ((second (clucy/search index "test" 10)) :subject))
+  ; broken (pr-str (clucy/search index "test" 10))
   )
 
