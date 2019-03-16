@@ -8,10 +8,12 @@
 
 (defn -main
   [& args]
-  "I don't do a whole lot ... yet."
+
+  ;; What's a good buffer value here?
   (def c (chan 3))
 
-  ;; connect imap, get latest message
+  ;; connect imap to channel
+  ;; TODO: Can we leave out the attachments for now?
   (go (onto-chan c (get-all)))
 
   ;; put into search index
