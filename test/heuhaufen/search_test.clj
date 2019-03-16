@@ -3,7 +3,7 @@
             [heuhaufen.core :refer :all]
             [clucy.core :as clucy]))
 
-(defn setup-clojure
+(defn setup-lucene
   [f]
   (def index (clucy/memory-index))
   (clucy/add index
@@ -12,7 +12,7 @@
   (f)
   )
 
-(use-fixtures :each setup-clojure)
+(use-fixtures :each setup-lucene)
 
 (deftest a-test
   (testing "Storing and retrieving things with Lucene"

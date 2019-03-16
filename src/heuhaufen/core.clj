@@ -1,17 +1,22 @@
 (ns heuhaufen.core
   (:gen-class)
   (:require [heuhaufen.mail :refer :all]
-            [clojure-mail.message :refer (read-message)])
-  ;(:require [heuhaufen.search :refer :all]
+            [heuhaufen.search :refer :all]
+            [clucy.core :as clucy])
   )
 
 (defn -main
-  "I don't do a whole lot ... yet."
-  ;; connect imap, get latest message
-  ;; put into search index
-  ;; get it out of the search index
   [& args]
-  (println "Hello, World!")
-  (println (:subject (get-latest)))
+  "I don't do a whole lot ... yet."
+
+  ;; connect imap, get latest message
+  (def latest (get-latest))
+
+  ;; put into search index
+  (def index (setup-lucene))
+  (clucy/add index latest)
+
+  ;; get it out of the search index
+  (println ((first (clucy/search index "test" 10)) :subject))
   )
 
