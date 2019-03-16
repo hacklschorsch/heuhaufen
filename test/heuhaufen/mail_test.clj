@@ -2,7 +2,6 @@
   (:require [clojure.test :refer :all]
             [heuhaufen.core :refer :all]
             [clojure-mail.core :refer :all]
-            [clojure-mail.gmail :as gmail]
             [clojure-mail.message :refer (read-message)]))
 
 
