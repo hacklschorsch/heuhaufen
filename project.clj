@@ -5,7 +5,8 @@
             :url "https://www.eclipse.org/legal/epl-2.0/"}
   :dependencies [[org.clojure/clojure "1.10.0"],
                  [zclucy "0.9.2"],
-                 [io.forward/clojure-mail "1.0.7"]]
+                 [io.forward/clojure-mail "1.0.7"]
+                 [org.clojure/core.async "0.4.490"]]
   :main ^:skip-aot heuhaufen.core
   :target-path "target/%s"
   :profiles {:uberjar {:aot :all}})
