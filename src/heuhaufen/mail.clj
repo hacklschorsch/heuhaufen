@@ -1,5 +1,5 @@
 (ns heuhaufen.mail
-  (:require [clojure-mail.core :refer :all]
+  (:require [clojure-mail.core :refer (store, inbox)]
             [clojure-mail.message :refer (read-message)]))
 
 
