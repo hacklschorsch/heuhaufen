@@ -1,6 +1,6 @@
 (ns heuhaufen.mail
-  (:require [clojure-mail.core :refer (store, inbox)]
-            [clojure-mail.message :refer (read-message)]))
+  (:require [clojure-mail.core :refer [store, inbox]]
+            [clojure-mail.message :refer [read-message]]))
 
 
 (defn connect-imap []
