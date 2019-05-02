@@ -1,10 +1,11 @@
 (ns heuhaufen.core
   (:gen-class)
-  (:require [heuhaufen.mail :refer (get-all)]
-            [heuhaufen.search :refer (setup-lucene)]
+  (:require [heuhaufen.mail :refer [get-all]]
+            [heuhaufen.search :refer [setup-lucene]]
             [clucy.core :as clucy]
-            [clojure.core.async :as async :refer :all])
+            [clojure.core.async :as async :refer [chan onto-chan thread <!!]])
   )
+
 
 (defn -main
   [& args]
