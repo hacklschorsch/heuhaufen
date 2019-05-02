@@ -3,8 +3,7 @@
   (:require [heuhaufen.mail :refer [get-all]]
             [heuhaufen.search :refer [setup-lucene]]
             [clucy.core :as clucy]
-            [clojure.core.async :as async :refer [chan onto-chan thread <!!]])
-  )
+            [clojure.core.async :as async :refer [chan onto-chan thread <!!]]))
 
 
 (defn -main
